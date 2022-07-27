@@ -29,8 +29,8 @@ function onFormInput(e) {
 function populateForm() {
   const savedForm = parseJson;
   if (savedForm) {
-    for (const key in savedForm) {
-      document.querySelector(`[name=${key}]`).value = savedForm[key];
-    }
+    Object.entries(savedForm).forEach(([name, value]) => {
+      form.elements[name].value = value
+    })
   }
 }
