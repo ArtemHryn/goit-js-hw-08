@@ -21,5 +21,7 @@ function onSaveTime(evt) {
 }
 
 function onFinishedTime() {
-  player.setCurrentTime(localStorage.getItem(CURRENT_TIME));
+  if (localStorage.getItem(CURRENT_TIME)) {
+    player.setCurrentTime(localStorage.getItem(CURRENT_TIME));
+  }
 }
